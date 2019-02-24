@@ -1,0 +1,21 @@
+{
+  "name": "myapp_server",
+  "version": "1.0.0",
+  "description": "A graphql server for my angular apollo app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graphql",
+    "express",
+    "server"
+  ],
+  "author": "Natalia Venditto",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.1.1"
+  }
+}
