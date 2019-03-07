@@ -3,6 +3,7 @@ const express_graphql = require('express-graphql');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const { buildSchema } = require('graphql');
+const CATS = require('./cats');
 
 // Schema for our GraphQL validation
 const schema = buildSchema(`
@@ -32,40 +33,15 @@ const root = {
     kittens: getKitten
 };
 
-const kittenData = [
-    {
-        id: '1',
-        name: 'pedro'
-    },
-    {
-        id: '2',
-        name: 'pablo'
-    },
-    {
-        id: '3',
-        name: 'vilma'
-    },
-    {
-        id: '4',
-        name: 'betty'
-    },
-    {
-        id: '5',
-        name: 'slate'
-    },
-    {
-        id: '6',
-        name: 'gazu'
-    }
-]
+const kittenData = CATS;
 // Define cors options to be able to use cross doamin resource sharing
-const whitelist = ['http://localhost:8001']
+const whitelist = ['http://localhost:8001', 'http://localhost:8000/api']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
-      callback(new Error('Not allowed by CORS!!!'))
+      callback(new Error('CORS issue!!!'))
     }
   },
   credentials: true
