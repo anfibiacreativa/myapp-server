@@ -14,10 +14,13 @@ const schema = buildSchema(`
     }
     type Kitten {
         id: String,
-        name: String
+        name: String,
+        mission: String
     }
 `);
 
+// get the kitten data
+const kittenData = CATS;
 const getKitten = function(args) {
     if (args.id) {
         const kitten = args.id;
@@ -33,7 +36,6 @@ const root = {
     kittens: getKitten
 };
 
-const kittenData = CATS;
 // Define cors options to be able to use cross doamin resource sharing
 const whitelist = ['http://localhost:8001', 'http://localhost:8000/api']
 const corsOptions = {
