@@ -1,5 +1,5 @@
 // cats mock
-const CATS = [
+module.exports = [
   {
       id: '1',
       name: 'pedro',
