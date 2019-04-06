@@ -1,5 +1,5 @@
 # myapp-server
-Just a GraphQL server
+Node Express/GraphQL server
 
 ## Usage
 
